@@ -1,0 +1,27 @@
+{
+  "name": "js-sass-starter",
+  "version": "1.0.0",
+  "description": "A quick JS SCSS Starter Project",
+  "main": "src/js/app.js",
+  "author": "Justyn Clark",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "browser-sync": "^2.18.13",
+    "chokidar-cli": "^1.2.0",
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.0.2",
+    "postcss-cli": "^4.1.0"
+  },
+  "scripts": {
+    "start": "npm-run-all -p sync js sass autoprefixer",
+    "sync": "browser-sync start --server --files \"*.html, dist/scripts.js, dist/style.css\"",
+    "js": "babel src/js --watch -o dist/scripts.js --source-maps --presets env",
+    "sass": "node-sass --watch src/**/*.scss dist/style.css",
+    "autoprefixer": "chokidar 'src/**/*.scss' -c 'npm run postcss'",
+    "postcss": "postcss dist/*.css --use autoprefixer -d dist"
+  },
+  "dependencies": {}
+}

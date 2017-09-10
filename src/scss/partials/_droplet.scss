@@ -1,0 +1,20 @@
+.droplet {
+  background: mediumaquamarine;
+  border-radius: 2% 70%;
+  height: 100px;
+  margin: 100px;
+  transition: all 3s;
+  width: 100px;
+  //animation: rotate 3s linear infinite;
+  margin: 0 auto;
+  @media (min-width: 768px) {
+    margin: 22% auto 0;
+  }
+  @keyframes rotate {
+    from {transform: rotate(0deg)}
+    to {transform: rotate(360deg)}
+  }
+  &:hover {
+    //transform: rotate(1080deg);
+  }
+}

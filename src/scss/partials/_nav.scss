@@ -1,0 +1,30 @@
+.nav {
+  display: flex;
+  height: 200px;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #60412B;
+  transform: translateY(-100%);
+  transition: all ease 1s;
+  &.open {
+    transform: translateY(0);
+    transition: all ease 1s;
+  }
+  @media (min-width: 321px) {
+    height: 90px;
+    flex-direction: row;
+  }
+  li {
+    list-style-type: none;
+    align-self: center;
+    color: white;
+    text-transform: lowercase;
+    font-family: 'Libre Baskerville', serif;
+    &:first-child {
+      font-size: 2rem;
+      color: antiquewhite;
+      font-family: 'Monoton', cursive;
+    }
+  }
+}
